@@ -1,16 +1,23 @@
 {
   "schema_version": 1,
-  "programme_status": "ready",
+  "programme_status": "running",
   "usage_mode": "normal",
   "last_completed_run": "RUN-000",
-  "active_run": null,
-  "active_branch": "main",
+  "active_run": {
+    "id": "RUN-001",
+    "objective": "Baseline the core claims and scorecard.",
+    "pilot": null,
+    "claim_family": "programme-baseline",
+    "max_new_sources": 0,
+    "started_at": "2026-08-25T08:48:37+00:00",
+    "research_passes_completed": 0,
+    "new_sources_this_run": 0
+  },
+  "active_branch": "codex/holiday/run-001",
   "active_pr": null,
   "active_pilot": null,
-  "completed_steps": [
-    "Defined the budget-adaptive research greenhouse."
-  ],
-  "next_atomic_action": "Begin RUN-001 and baseline the core claims without adding sources.",
+  "completed_steps": [],
+  "next_atomic_action": "Execute the first bounded pass for RUN-001: Baseline the core claims and scorecard.",
   "next_run": {
     "id": "RUN-001",
     "objective": "Baseline the core claims and scorecard.",
@@ -129,10 +136,10 @@
   },
   "safe_synthesis_change": null,
   "harvest": {
-    "completed_since_last_check": "Greenhouse control system prepared locally.",
+    "completed_since_last_check": "Started RUN-001.",
     "claims_changed": "None; baseline is the next run.",
     "current_best_finding": "No empirical finding yet.",
-    "next_recommendation": "Begin RUN-001."
+    "next_recommendation": "Execute the first bounded pass for RUN-001: Baseline the core claims and scorecard."
   },
   "latest_checkpoint_commit": "HEAD"
 }

@@ -2,10 +2,10 @@
 
 **STATUS:** GREEN
 **LAST SAFE CHECKPOINT:** HEAD (RUN-000)
-**COMPLETED SINCE LAST CHECK:** Greenhouse control system prepared locally.
+**COMPLETED SINCE LAST CHECK:** Started RUN-001.
 **CLAIMS ADVANCED / WEAKENED:** None; baseline is the next run.
 **CURRENT BEST FINDING:** No empirical finding yet.
-**NEXT ATOMIC ACTION:** Begin RUN-001 and baseline the core claims without adding sources.
+**NEXT ATOMIC ACTION:** Execute the first bounded pass for RUN-001: Baseline the core claims and scorecard.
 **DECISIONS:** none
 **REPLY:** CONTINUE
 
@@ -13,10 +13,10 @@
 
 ## Active run
 
-- Programme state: `ready`
+- Programme state: `running`
 - Usage mode: `normal`
-- Active run: none
-- Active branch: `main`
+- Active run: RUN-001 — Baseline the core claims and scorecard.
+- Active branch: `codex/holiday/run-001`
 - Active PR: `none`
 - Active pilot: `none`
 
