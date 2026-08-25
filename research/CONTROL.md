@@ -1,11 +1,11 @@
 # Research Greenhouse Control
 
 **STATUS:** GREEN
-**LAST SAFE CHECKPOINT:** HEAD (RUN-000)
-**COMPLETED SINCE LAST CHECK:** Greenhouse control system prepared locally.
-**CLAIMS ADVANCED / WEAKENED:** None; baseline is the next run.
-**CURRENT BEST FINDING:** No empirical finding yet.
-**NEXT ATOMIC ACTION:** Begin RUN-001 and baseline the core claims without adding sources.
+**LAST SAFE CHECKPOINT:** HEAD (RUN-001)
+**COMPLETED SINCE LAST CHECK:** Compared instruction, incentive, observation, expectancy, and pairing evidence; bounded semantic control against broader component rivals and specified a carrier-by-content test.
+**CLAIMS ADVANCED / WEAKENED:** C-002: asserted → bounded
+**CURRENT BEST FINDING:** All eight claims now have explicit maturity, boundaries, principal rivals, falsifiers, and candidate measurements; no empirical evidence was added.
+**NEXT ATOMIC ACTION:** Create the RUN-002 pull request, record it in state, and then complete the run.
 **DECISIONS:** none
 **REPLY:** CONTINUE
 
@@ -13,24 +13,23 @@
 
 ## Active run
 
-- Programme state: `ready`
+- Programme state: `running`
 - Usage mode: `normal`
-- Active run: none
-- Active branch: `main`
+- Active run: RUN-002 — Compare semantic intervention with conditioned-response rivals in threat and avoidance.
+- Active branch: `research/run-002`
 - Active PR: `none`
-- Active pilot: `none`
+- Active pilot: `threat-avoidance`
 
 ## Pilot budgets
 
 | Pilot | Status | Sources | Runs without gain |
 | --- | --- | ---: | ---: |
-| `threat-avoidance` | queued | 0/8 | 0/2 |
+| `threat-avoidance` | active | 4/8 | 0/2 |
 | `fear-conditioning` | queued | 0/8 | 0/2 |
 | `fiat-money` | queued | 0/8 | 0/2 |
 
 ## Queue
 
-- `RUN-001` [programme] — Baseline the core claims and scorecard.
 - `RUN-002` [threat-avoidance] — Compare semantic intervention with conditioned-response rivals in threat and avoidance.
 - `RUN-003` [threat-avoidance] — Test effective-field, feedback, perturbation, and hysteresis claims in threat and avoidance.
 - `RUN-004` [fear-conditioning] — Construct the strongest lower-level account of Pavlovian fear conditioning.

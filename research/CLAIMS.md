@@ -4,8 +4,8 @@ This register tracks maturity, not truth by declaration. Final states (`retained
 
 | ID | Claim | Commitment | Maturity | Primary pilots |
 | --- | --- | --- | --- | --- |
-| C-001 | Meaning-sensitive constructions can transform an agent-relative field of actionable possibilities and thereby alter action and feedback. | Core | bounded | threat-avoidance, fiat-money |
-| C-002 | Semantic grouping earns causal status when it provides carrier-invariant, intervention-relevant prediction beyond lower-level groupings. | Core test | asserted | threat-avoidance, fear-conditioning, fiat-money |
+| C-001 | Meaning-sensitive constructions can transform an agent-relative field of actionable possibilities and thereby alter action and feedback. | Core | rivalled | threat-avoidance, fiat-money |
+| C-002 | Semantic grouping earns causal status when it provides carrier-invariant, intervention-relevant prediction beyond lower-level groupings. | Core test | bounded | threat-avoidance, fear-conditioning, fiat-money |
 | C-003 | An estimated effective field predicts behaviour better than its component measures considered independently. | Candidate integrative construct | asserted | threat-avoidance |
 | C-004 | Some recurrent meaning-sensitive feedback loops form self-maintaining attractor regimes demonstrable through perturbation, return, switching, or hysteresis. | Dynamical hypothesis | bounded | threat-avoidance |
 | C-005 | Repeated outputs can become later control variables or generative conditions through learning, stabilization, or externalization. | Historical-recursive hypothesis | bounded | threat-avoidance, fiat-money |
@@ -19,14 +19,14 @@ This register tracks maturity, not truth by declaration. Final states (`retained
 - **Principal rival:** Separate attention, valuation, confidence, affordance, and action-selection variables suffice.
 - **Falsifier:** Semantic intervention produces no coherent or predictive redistribution beyond the component variables.
 - **Candidate measurements:** choices, exploration, perceived affordances, counterfactual generation, confidence, controllability, and willingness to test alternatives.
-- **Evidence:** none gathered in the greenhouse yet.
+- **Evidence:** RUN-002 found that contingency instructions can change fear learning, extinction, recall, and avoidance, including instructed reductions in avoidance while fear remains high. This rivals a pairing-only account, but expectancy, context, incentive, associative, and component-variable explanations remain open (SRC-TA-001–004).
 ## C-002 — Semantic causal invariance
 
 - **Current boundary:** Semantic description must improve prediction or intervention across carrier variation.
 - **Principal rival:** Lower-level stimulus features, associative history, and conditioned response fully explain the effect.
 - **Falsifier:** Meaning-preserving carrier changes do not generalize, or meaning changes add no predictive information once physical and learned variables are controlled.
 - **Candidate measurements:** intervention effects grouped by interpreted content versus physical carrier.
-- **Evidence:** none gathered in the greenhouse yet.
+- **Evidence:** RUN-002 operationalized the required contrast as a content-by-carrier intervention with held-out comparison against expectancy, fear, action-value, attention, and learning-history models. The selected studies manipulate instructions but do not execute that carrier-invariance test (SRC-TA-001–004).
 
 ## C-003 — Incremental value of the effective field
 

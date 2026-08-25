@@ -1,31 +1,34 @@
 {
   "schema_version": 1,
-  "programme_status": "ready",
+  "programme_status": "running",
   "usage_mode": "normal",
-  "last_completed_run": "RUN-000",
-  "active_run": null,
-  "active_branch": "main",
+  "last_completed_run": "RUN-001",
+  "active_run": {
+    "id": "RUN-002",
+    "objective": "Compare semantic intervention with conditioned-response rivals in threat and avoidance.",
+    "pilot": "threat-avoidance",
+    "claim_family": "semantic-control",
+    "max_new_sources": 4,
+    "started_at": "2026-08-25T11:52:53+00:00",
+    "research_passes_completed": 2,
+    "new_sources_this_run": 4
+  },
+  "active_branch": "research/run-002",
   "active_pr": null,
-  "active_pilot": null,
+  "active_pilot": "threat-avoidance",
   "completed_steps": [
-    "Defined the budget-adaptive research greenhouse."
+    "Selected and deduplicated four sources covering instructed fear, avoidance intervention, conditioning additions, and measurement.",
+    "Compared instruction, incentive, observation, expectancy, and pairing evidence; bounded semantic control against broader component rivals and specified a carrier-by-content test."
   ],
-  "next_atomic_action": "Begin RUN-001 and baseline the core claims without adding sources.",
+  "next_atomic_action": "Create the RUN-002 pull request, record it in state, and then complete the run.",
   "next_run": {
-    "id": "RUN-001",
-    "objective": "Baseline the core claims and scorecard.",
-    "pilot": null,
-    "claim_family": "programme-baseline",
-    "max_new_sources": 0
+    "id": "RUN-002",
+    "objective": "Compare semantic intervention with conditioned-response rivals in threat and avoidance.",
+    "pilot": "threat-avoidance",
+    "claim_family": "semantic-control",
+    "max_new_sources": 4
   },
   "run_queue": [
-    {
-      "id": "RUN-001",
-      "objective": "Baseline the core claims and scorecard.",
-      "pilot": null,
-      "claim_family": "programme-baseline",
-      "max_new_sources": 0
-    },
     {
       "id": "RUN-002",
       "objective": "Compare semantic intervention with conditioned-response rivals in threat and avoidance.",
@@ -91,8 +94,8 @@
     }
   ],
   "claim_states": {
-    "C-001": "bounded",
-    "C-002": "asserted",
+    "C-001": "rivalled",
+    "C-002": "bounded",
     "C-003": "asserted",
     "C-004": "bounded",
     "C-005": "bounded",
@@ -102,7 +105,7 @@
   },
   "pilot_states": {
     "threat-avoidance": {
-      "status": "queued",
+      "status": "active",
       "path": "research/PILOTS/threat-avoidance.md",
       "runs_without_gain": 0
     },
@@ -119,7 +122,7 @@
   },
   "open_decisions": [],
   "source_counts": {
-    "threat-avoidance": 0,
+    "threat-avoidance": 4,
     "fear-conditioning": 0,
     "fiat-money": 0
   },
@@ -129,10 +132,10 @@
   },
   "safe_synthesis_change": null,
   "harvest": {
-    "completed_since_last_check": "Greenhouse control system prepared locally.",
-    "claims_changed": "None; baseline is the next run.",
-    "current_best_finding": "No empirical finding yet.",
-    "next_recommendation": "Begin RUN-001."
+    "completed_since_last_check": "Compared instruction, incentive, observation, expectancy, and pairing evidence; bounded semantic control against broader component rivals and specified a carrier-by-content test.",
+    "claims_changed": "C-002: asserted → bounded",
+    "current_best_finding": "All eight claims now have explicit maturity, boundaries, principal rivals, falsifiers, and candidate measurements; no empirical evidence was added.",
+    "next_recommendation": "Create the RUN-002 pull request, record it in state, and then complete the run."
   },
   "latest_checkpoint_commit": "HEAD"
 }
