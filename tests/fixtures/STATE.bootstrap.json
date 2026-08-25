@@ -1,36 +1,31 @@
 {
   "schema_version": 1,
-  "programme_status": "running",
+  "programme_status": "ready",
   "usage_mode": "normal",
-  "last_completed_run": "RUN-001",
-  "active_run": {
-    "id": "RUN-002",
-    "objective": "Compare semantic intervention with conditioned-response rivals in threat and avoidance.",
-    "pilot": "threat-avoidance",
-    "claim_family": "semantic-control",
-    "max_new_sources": 4,
-    "started_at": "2026-08-25T11:52:53+00:00",
-    "research_passes_completed": 2,
-    "new_sources_this_run": 4
-  },
-  "active_branch": "research/run-002",
+  "last_completed_run": "RUN-000",
+  "active_run": null,
+  "active_branch": "main",
   "active_pr": null,
-  "active_pilot": "threat-avoidance",
+  "active_pilot": null,
   "completed_steps": [
-    "Selected and deduplicated four sources covering instructed fear, avoidance intervention, conditioning additions, and measurement.",
-    "Compared instruction, incentive, observation, expectancy, and pairing evidence; bounded semantic control against broader component rivals and specified a carrier-by-content test.",
-    "Prepared a local commit-only RUN-002 handoff; remote push and PR creation are intentionally deferred.",
-    "Reconciled the local branch with the later public main snapshot while preserving RUN-002 evidence and human-facing closeouts."
+    "Defined the budget-adaptive research greenhouse."
   ],
-  "next_atomic_action": "Complete RUN-002 without a PR after validating the reconciled checkpoint.",
+  "next_atomic_action": "Begin RUN-001 and baseline the core claims without adding sources.",
   "next_run": {
-    "id": "RUN-002",
-    "objective": "Compare semantic intervention with conditioned-response rivals in threat and avoidance.",
-    "pilot": "threat-avoidance",
-    "claim_family": "semantic-control",
-    "max_new_sources": 4
+    "id": "RUN-001",
+    "objective": "Baseline the core claims and scorecard.",
+    "pilot": null,
+    "claim_family": "programme-baseline",
+    "max_new_sources": 0
   },
   "run_queue": [
+    {
+      "id": "RUN-001",
+      "objective": "Baseline the core claims and scorecard.",
+      "pilot": null,
+      "claim_family": "programme-baseline",
+      "max_new_sources": 0
+    },
     {
       "id": "RUN-002",
       "objective": "Compare semantic intervention with conditioned-response rivals in threat and avoidance.",
@@ -96,8 +91,8 @@
     }
   ],
   "claim_states": {
-    "C-001": "rivalled",
-    "C-002": "bounded",
+    "C-001": "bounded",
+    "C-002": "asserted",
     "C-003": "asserted",
     "C-004": "bounded",
     "C-005": "bounded",
@@ -107,7 +102,7 @@
   },
   "pilot_states": {
     "threat-avoidance": {
-      "status": "active",
+      "status": "queued",
       "path": "research/PILOTS/threat-avoidance.md",
       "runs_without_gain": 0
     },
@@ -124,7 +119,7 @@
   },
   "open_decisions": [],
   "source_counts": {
-    "threat-avoidance": 4,
+    "threat-avoidance": 0,
     "fear-conditioning": 0,
     "fiat-money": 0
   },
@@ -134,10 +129,10 @@
   },
   "safe_synthesis_change": null,
   "harvest": {
-    "completed_since_last_check": "Reconciled the local branch with the later public main snapshot while preserving RUN-002 evidence and human-facing closeouts.",
-    "claims_changed": "C-001: bounded → rivalled; C-002: asserted → bounded.",
-    "current_best_finding": "Instructions can alter fear and avoidance, defeating a pairing-only account, but they do not yet establish semantic necessity over expectancy, context, incentive, associative, or component-variable rivals.",
-    "next_recommendation": "Complete RUN-002 without a PR after validating the reconciled checkpoint."
+    "completed_since_last_check": "Greenhouse control system prepared locally.",
+    "claims_changed": "None; baseline is the next run.",
+    "current_best_finding": "No empirical finding yet.",
+    "next_recommendation": "Begin RUN-001."
   },
   "latest_checkpoint_commit": "HEAD"
 }

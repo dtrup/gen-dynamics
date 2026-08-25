@@ -1,11 +1,11 @@
 # Research Greenhouse Control
 
 **STATUS:** GREEN
-**LAST SAFE CHECKPOINT:** HEAD (RUN-000)
-**COMPLETED SINCE LAST CHECK:** Greenhouse control system prepared locally.
-**CLAIMS ADVANCED / WEAKENED:** None; baseline is the next run.
-**CURRENT BEST FINDING:** No empirical finding yet.
-**NEXT ATOMIC ACTION:** Begin RUN-001 and baseline the core claims without adding sources.
+**LAST SAFE CHECKPOINT:** HEAD (RUN-001)
+**COMPLETED SINCE LAST CHECK:** Reconciled the local branch with the later public main snapshot while preserving RUN-002 evidence and human-facing closeouts.
+**CLAIMS ADVANCED / WEAKENED:** C-001: bounded → rivalled; C-002: asserted → bounded.
+**CURRENT BEST FINDING:** Instructions can alter fear and avoidance, defeating a pairing-only account, but they do not yet establish semantic necessity over expectancy, context, incentive, associative, or component-variable rivals.
+**NEXT ATOMIC ACTION:** Complete RUN-002 without a PR after validating the reconciled checkpoint.
 **DECISIONS:** none
 **REPLY:** CONTINUE
 
@@ -13,24 +13,23 @@
 
 ## Active run
 
-- Programme state: `ready`
+- Programme state: `running`
 - Usage mode: `normal`
-- Active run: none
-- Active branch: `main`
+- Active run: RUN-002 — Compare semantic intervention with conditioned-response rivals in threat and avoidance.
+- Active branch: `research/run-002`
 - Active PR: `none`
-- Active pilot: `none`
+- Active pilot: `threat-avoidance`
 
 ## Pilot budgets
 
 | Pilot | Status | Sources | Runs without gain |
 | --- | --- | ---: | ---: |
-| `threat-avoidance` | queued | 0/8 | 0/2 |
+| `threat-avoidance` | active | 4/8 | 0/2 |
 | `fear-conditioning` | queued | 0/8 | 0/2 |
 | `fiat-money` | queued | 0/8 | 0/2 |
 
 ## Queue
 
-- `RUN-001` [programme] — Baseline the core claims and scorecard.
 - `RUN-002` [threat-avoidance] — Compare semantic intervention with conditioned-response rivals in threat and avoidance.
 - `RUN-003` [threat-avoidance] — Test effective-field, feedback, perturbation, and hysteresis claims in threat and avoidance.
 - `RUN-004` [fear-conditioning] — Construct the strongest lower-level account of Pavlovian fear conditioning.
@@ -48,7 +47,7 @@ None.
 ## Fresh-task recovery
 
 1. Read `AGENTS.md` and `research/STATE.json` before interpreting the research.
-2. Run `python scripts/research_guard.py recover-check` and inspect the PR if active.
+2. Run `python scripts/research_guard.py recover-check` and inspect any recorded PR.
 3. Treat `active_branch` as the durable source branch; an ephemeral cloud branch such as `work` is not a conflict.
 4. Compare committed artifacts with `completed_steps`.
 5. Resume `next_atomic_action`; do not repeat completed steps or duplicate sources.

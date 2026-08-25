@@ -4,8 +4,8 @@ This register tracks maturity, not truth by declaration. Final states (`retained
 
 | ID | Claim | Commitment | Maturity | Primary pilots |
 | --- | --- | --- | --- | --- |
-| C-001 | Meaning-sensitive constructions can transform an agent-relative field of actionable possibilities and thereby alter action and feedback. | Core | rivalled | threat-avoidance, fiat-money |
-| C-002 | Semantic grouping earns causal status when it provides carrier-invariant, intervention-relevant prediction beyond lower-level groupings. | Core test | bounded | threat-avoidance, fear-conditioning, fiat-money |
+| C-001 | Meaning-sensitive constructions can transform an agent-relative field of actionable possibilities and thereby alter action and feedback. | Core | bounded | threat-avoidance, fiat-money |
+| C-002 | Semantic grouping earns causal status when it provides carrier-invariant, intervention-relevant prediction beyond lower-level groupings. | Core test | asserted | threat-avoidance, fear-conditioning, fiat-money |
 | C-003 | An estimated effective field predicts behaviour better than its component measures considered independently. | Candidate integrative construct | asserted | threat-avoidance |
 | C-004 | Some recurrent meaning-sensitive feedback loops form self-maintaining attractor regimes demonstrable through perturbation, return, switching, or hysteresis. | Dynamical hypothesis | bounded | threat-avoidance |
 | C-005 | Repeated outputs can become later control variables or generative conditions through learning, stabilization, or externalization. | Historical-recursive hypothesis | bounded | threat-avoidance, fiat-money |
@@ -13,20 +13,37 @@ This register tracks maturity, not truth by declaration. Final states (`retained
 | C-007 | Cross-scale similarities are explanatory only when typed as mechanistic, dynamical, functional, semantic, or genealogical. | Methodological constraint | bounded | all pilots |
 | C-008 | A compact basis of field dimensions, operators, and interaction motifs may outperform domain-specific decompositions on held-out cases. | Compression hypothesis | bounded | cross-pilot comparison |
 
+## RUN-001 programme baseline
+
+This is a zero-source operational baseline, not an evidential assessment. The pilot scorecards remain at zero until a bounded pilot run supplies evidence that discriminates a claim from its stated rival.
+
+| Claim | Baseline status | Primary discriminating requirement | Principal unresolved gap |
+| --- | --- | --- | --- |
+| C-001 | Bounded | Meaning-sensitive intervention must redistribute actionable possibilities beyond component variables. | No intervention evidence or comparative model. |
+| C-002 | Asserted | Effects must generalize across meaning-preserving carrier changes and differ after meaning changes. | No carrier-variation test. |
+| C-003 | Asserted | A field representation must improve held-out prediction or intervention selection over components. | No operational field estimator or model comparison. |
+| C-004 | Bounded | Content-sensitive perturbation must show recovery, switching, or hysteresis not explained by habit. | No perturbation trajectory evidence. |
+| C-005 | Bounded | Prior outputs must measurably alter later generative conditions beyond stable confounds. | No longitudinal or counterfactual identification. |
+| C-006 | Asserted | A shared control description must improve cross-target prediction or intervention. | Target classes are not yet operationally aligned. |
+| C-007 | Bounded | Relation typing must constrain transfer and predict distinct failure patterns. | No cross-pilot transfer comparison. |
+| C-008 | Bounded | The common basis must outperform equally complex domain-specific decompositions on held-out cases. | No common dataset, complexity rule, or held-out comparison. |
+
+At baseline, C-002, C-003, and C-006 remain asserted because their tests are identifiable but not yet bounded by pilot evidence. The other claims remain bounded by explicit scope, rivals, falsifiers, and candidate measurements, but none advances in maturity during RUN-001.
+
 ## C-001 — Core semantic-field loop
 
 - **Current boundary:** The claim concerns currently actionable possibilities, not every influence on cognition.
 - **Principal rival:** Separate attention, valuation, confidence, affordance, and action-selection variables suffice.
 - **Falsifier:** Semantic intervention produces no coherent or predictive redistribution beyond the component variables.
 - **Candidate measurements:** choices, exploration, perceived affordances, counterfactual generation, confidence, controllability, and willingness to test alternatives.
-- **Evidence:** RUN-002 found that contingency instructions can change fear learning, extinction, recall, and avoidance, including instructed reductions in avoidance while fear remains high. This rivals a pairing-only account, but expectancy, context, incentive, associative, and component-variable explanations remain open (SRC-TA-001–004).
+- **Evidence:** none gathered in the greenhouse yet.
 ## C-002 — Semantic causal invariance
 
 - **Current boundary:** Semantic description must improve prediction or intervention across carrier variation.
 - **Principal rival:** Lower-level stimulus features, associative history, and conditioned response fully explain the effect.
 - **Falsifier:** Meaning-preserving carrier changes do not generalize, or meaning changes add no predictive information once physical and learned variables are controlled.
 - **Candidate measurements:** intervention effects grouped by interpreted content versus physical carrier.
-- **Evidence:** RUN-002 operationalized the required contrast as a content-by-carrier intervention with held-out comparison against expectancy, fear, action-value, attention, and learning-history models. The selected studies manipulate instructions but do not execute that carrier-invariance test (SRC-TA-001–004).
+- **Evidence:** none gathered in the greenhouse yet.
 
 ## C-003 — Incremental value of the effective field
 
