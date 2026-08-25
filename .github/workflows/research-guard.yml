@@ -38,8 +38,11 @@ jobs:
     needs: validate
     runs-on: ubuntu-latest
     steps:
-      - name: Enable squash auto-merge
+      - name: Squash-merge validated safe change
         env:
           GH_TOKEN: ${{ github.token }}
           PR_URL: ${{ github.event.pull_request.html_url }}
-        run: gh pr merge "$PR_URL" --squash --delete-branch --auto
+        # Private repositories on GitHub Free cannot enable branch protection or
+        # native auto-merge. The label gate plus the completed validate job is the
+        # repository's merge guard, so merge directly only after both have passed.
+        run: gh pr merge "$PR_URL" --squash --delete-branch
