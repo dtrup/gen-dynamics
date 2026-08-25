@@ -2,10 +2,10 @@
 
 **STATUS:** GREEN
 **LAST SAFE CHECKPOINT:** HEAD (RUN-001)
-**COMPLETED SINCE LAST CHECK:** Prepared a local commit-only RUN-002 handoff; remote push and PR creation are intentionally deferred.
+**COMPLETED SINCE LAST CHECK:** Reconciled the local branch with the later public main snapshot while preserving RUN-002 evidence and human-facing closeouts.
 **CLAIMS ADVANCED / WEAKENED:** C-001: bounded → rivalled; C-002: asserted → bounded.
 **CURRENT BEST FINDING:** Instructions can alter fear and avoidance, defeating a pairing-only account, but they do not yet establish semantic necessity over expectancy, context, incentive, associative, or component-variable rivals.
-**NEXT ATOMIC ACTION:** Resume only if publication is requested: create and record the RUN-002 PR, then complete the run.
+**NEXT ATOMIC ACTION:** Complete RUN-002 without a PR after validating the reconciled checkpoint.
 **DECISIONS:** none
 **REPLY:** CONTINUE
 
@@ -47,7 +47,7 @@ None.
 ## Fresh-task recovery
 
 1. Read `AGENTS.md` and `research/STATE.json` before interpreting the research.
-2. Run `python scripts/research_guard.py recover-check` and inspect the PR if active.
+2. Run `python scripts/research_guard.py recover-check` and inspect any recorded PR.
 3. Treat `active_branch` as the durable source branch; an ephemeral cloud branch such as `work` is not a conflict.
 4. Compare committed artifacts with `completed_steps`.
 5. Resume `next_atomic_action`; do not repeat completed steps or duplicate sources.
