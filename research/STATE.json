@@ -1,0 +1,138 @@
+{
+  "schema_version": 1,
+  "programme_status": "ready",
+  "usage_mode": "normal",
+  "last_completed_run": "RUN-000",
+  "active_run": null,
+  "active_branch": "main",
+  "active_pr": null,
+  "active_pilot": null,
+  "completed_steps": [
+    "Defined the budget-adaptive research greenhouse."
+  ],
+  "next_atomic_action": "Begin RUN-001 and baseline the core claims without adding sources.",
+  "next_run": {
+    "id": "RUN-001",
+    "objective": "Baseline the core claims and scorecard.",
+    "pilot": null,
+    "claim_family": "programme-baseline",
+    "max_new_sources": 0
+  },
+  "run_queue": [
+    {
+      "id": "RUN-001",
+      "objective": "Baseline the core claims and scorecard.",
+      "pilot": null,
+      "claim_family": "programme-baseline",
+      "max_new_sources": 0
+    },
+    {
+      "id": "RUN-002",
+      "objective": "Compare semantic intervention with conditioned-response rivals in threat and avoidance.",
+      "pilot": "threat-avoidance",
+      "claim_family": "semantic-control",
+      "max_new_sources": 4
+    },
+    {
+      "id": "RUN-003",
+      "objective": "Test effective-field, feedback, perturbation, and hysteresis claims in threat and avoidance.",
+      "pilot": "threat-avoidance",
+      "claim_family": "effective-field-attractors",
+      "max_new_sources": 4
+    },
+    {
+      "id": "RUN-004",
+      "objective": "Construct the strongest lower-level account of Pavlovian fear conditioning.",
+      "pilot": "fear-conditioning",
+      "claim_family": "nonsemantic-boundary",
+      "max_new_sources": 4
+    },
+    {
+      "id": "RUN-005",
+      "objective": "Determine the semantic boundary and required revisions from fear conditioning.",
+      "pilot": "fear-conditioning",
+      "claim_family": "nonsemantic-boundary",
+      "max_new_sources": 4
+    },
+    {
+      "id": "RUN-006",
+      "objective": "Test carrier variation and meaning-sensitive consequences in fiat money.",
+      "pilot": "fiat-money",
+      "claim_family": "semantic-institutional-control",
+      "max_new_sources": 4
+    },
+    {
+      "id": "RUN-007",
+      "objective": "Separate representation, coordination, infrastructure, enforcement, and power in fiat money.",
+      "pilot": "fiat-money",
+      "claim_family": "semantic-institutional-control",
+      "max_new_sources": 4
+    },
+    {
+      "id": "RUN-008",
+      "objective": "Compare all pilots using the common case protocol.",
+      "pilot": null,
+      "claim_family": "cross-pilot-comparison",
+      "max_new_sources": 0
+    },
+    {
+      "id": "RUN-009",
+      "objective": "Run a subtraction pass and propose validated synthesis clarifications.",
+      "pilot": null,
+      "claim_family": "subtraction",
+      "max_new_sources": 0
+    },
+    {
+      "id": "RUN-010",
+      "objective": "Produce the final or partial harvest and leave a clean resume point.",
+      "pilot": null,
+      "claim_family": "harvest",
+      "max_new_sources": 0
+    }
+  ],
+  "claim_states": {
+    "C-001": "bounded",
+    "C-002": "asserted",
+    "C-003": "asserted",
+    "C-004": "bounded",
+    "C-005": "bounded",
+    "C-006": "asserted",
+    "C-007": "bounded",
+    "C-008": "bounded"
+  },
+  "pilot_states": {
+    "threat-avoidance": {
+      "status": "queued",
+      "path": "research/PILOTS/threat-avoidance.md",
+      "runs_without_gain": 0
+    },
+    "fear-conditioning": {
+      "status": "queued",
+      "path": "research/PILOTS/fear-conditioning.md",
+      "runs_without_gain": 0
+    },
+    "fiat-money": {
+      "status": "queued",
+      "path": "research/PILOTS/fiat-money.md",
+      "runs_without_gain": 0
+    }
+  },
+  "open_decisions": [],
+  "source_counts": {
+    "threat-avoidance": 0,
+    "fear-conditioning": 0,
+    "fiat-money": 0
+  },
+  "reserve_runs": {
+    "remaining": 2,
+    "approved": []
+  },
+  "safe_synthesis_change": null,
+  "harvest": {
+    "completed_since_last_check": "Greenhouse control system prepared locally.",
+    "claims_changed": "None; baseline is the next run.",
+    "current_best_finding": "No empirical finding yet.",
+    "next_recommendation": "Begin RUN-001."
+  },
+  "latest_checkpoint_commit": "HEAD"
+}
