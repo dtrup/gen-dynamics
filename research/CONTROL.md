@@ -2,10 +2,10 @@
 
 **STATUS:** GREEN
 **LAST SAFE CHECKPOINT:** HEAD (RUN-001)
-**COMPLETED SINCE LAST CHECK:** Compared instruction, incentive, observation, expectancy, and pairing evidence; bounded semantic control against broader component rivals and specified a carrier-by-content test.
-**CLAIMS ADVANCED / WEAKENED:** C-002: asserted → bounded
-**CURRENT BEST FINDING:** All eight claims now have explicit maturity, boundaries, principal rivals, falsifiers, and candidate measurements; no empirical evidence was added.
-**NEXT ATOMIC ACTION:** Create the RUN-002 pull request, record it in state, and then complete the run.
+**COMPLETED SINCE LAST CHECK:** Prepared a local commit-only RUN-002 handoff; remote push and PR creation are intentionally deferred.
+**CLAIMS ADVANCED / WEAKENED:** C-001: bounded → rivalled; C-002: asserted → bounded.
+**CURRENT BEST FINDING:** Instructions can alter fear and avoidance, defeating a pairing-only account, but they do not yet establish semantic necessity over expectancy, context, incentive, associative, or component-variable rivals.
+**NEXT ATOMIC ACTION:** Resume only if publication is requested: create and record the RUN-002 PR, then complete the run.
 **DECISIONS:** none
 **REPLY:** CONTINUE
 
