@@ -48,9 +48,10 @@ None.
 ## Fresh-task recovery
 
 1. Read `AGENTS.md` and `research/STATE.json` before interpreting the research.
-2. Inspect the active branch, PR, and checkpoint commit.
-3. Compare committed artifacts with `completed_steps`.
-4. Resume `next_atomic_action`; do not repeat completed steps or duplicate sources.
-5. Validate and commit after the next atomic step.
+2. Run `python scripts/research_guard.py recover-check` and inspect the PR if active.
+3. Treat `active_branch` as the durable source branch; an ephemeral cloud branch such as `work` is not a conflict.
+4. Compare committed artifacts with `completed_steps`.
+5. Resume `next_atomic_action`; do not repeat completed steps or duplicate sources.
+6. Validate and commit after the next atomic step.
 
 The machine-readable source of truth is `research/STATE.json`; regenerate this dashboard with `python scripts/research_guard.py render`.

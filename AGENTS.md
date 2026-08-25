@@ -13,13 +13,15 @@ Every fresh task must do these steps before interpreting the research:
 1. Fetch `main` and the branch named in `research/STATE.json`, when a remote is available.
 2. Read this file, then `research/STATE.json`, then `research/CONTROL.md`, `research/CLAIMS.md`, and the active pilot report.
 3. Inspect the active PR and the commit referenced by `latest_checkpoint_commit`. `HEAD` means the commit containing the checked-out state file.
-4. If `programme_status` is `running`, compare committed artifacts with `completed_steps`; resume `next_atomic_action` without repeating completed steps.
-5. Deduplicate evidence by DOI, stable URL, or source identifier.
-6. Run `python scripts/research_guard.py validate` before changing state.
+4. Run `python scripts/research_guard.py recover-check` before changing state. This also runs repository validation.
+5. If `programme_status` is `running`, compare committed artifacts with `completed_steps`; resume `next_atomic_action` without repeating completed steps.
+6. Deduplicate evidence by DOI, stable URL, or source identifier.
 
 Never restart a pilot because a prior chat is unavailable. Repository state, not conversational memory, is authoritative.
 
-If branch, PR, artifacts, and state disagree, set `programme_status` to `waiting_decision`, add one decision card, avoid editing the synthesis, and continue only unrelated reversible work.
+`active_branch` names the durable source/PR branch, not the runner's local checkout branch. Codex cloud may materialize the selected source commit on an ephemeral branch such as `work`; a different checkout branch name is not a conflict when `recover-check` confirms the checkpoint, expected remote ref when available, and a clean worktree.
+
+If the checkpoint commit, expected remote ref, PR, artifacts, and state disagree, set `programme_status` to `waiting_decision`, add one decision card, avoid editing the synthesis, and continue only unrelated reversible work.
 
 ## Run lifecycle
 

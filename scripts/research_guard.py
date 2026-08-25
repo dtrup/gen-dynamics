@@ -196,10 +196,11 @@ def render_control(state: dict[str, Any]) -> str:
             "## Fresh-task recovery",
             "",
             "1. Read `AGENTS.md` and `research/STATE.json` before interpreting the research.",
-            "2. Inspect the active branch, PR, and checkpoint commit.",
-            "3. Compare committed artifacts with `completed_steps`.",
-            "4. Resume `next_atomic_action`; do not repeat completed steps or duplicate sources.",
-            "5. Validate and commit after the next atomic step.",
+            "2. Run `python scripts/research_guard.py recover-check` and inspect the PR if active.",
+            "3. Treat `active_branch` as the durable source branch; an ephemeral cloud branch such as `work` is not a conflict.",
+            "4. Compare committed artifacts with `completed_steps`.",
+            "5. Resume `next_atomic_action`; do not repeat completed steps or duplicate sources.",
+            "6. Validate and commit after the next atomic step.",
             "",
             "The machine-readable source of truth is `research/STATE.json`; regenerate this dashboard with `python scripts/research_guard.py render`.",
             "",
@@ -234,6 +235,55 @@ def git(root: Path, *args: str) -> subprocess.CompletedProcess[str]:
 
 def ref_exists(root: Path, ref: str) -> bool:
     return git(root, "rev-parse", "--verify", "--quiet", ref).returncode == 0
+
+
+def recovery_checkout_report(state: dict[str, Any], root: Path = ROOT) -> tuple[dict[str, Any], list[str]]:
+    """Verify a fresh checkout without mistaking a cloud runner branch for a durable branch."""
+    errors = validate_repository(root)
+    head_result = git(root, "rev-parse", "HEAD")
+    head_commit = head_result.stdout.strip() if head_result.returncode == 0 else None
+    checkout_branch = current_branch(root)
+    source_branch = state.get("active_branch") or "main"
+    checkpoint = state.get("latest_checkpoint_commit")
+    checkpoint_commit = head_commit if checkpoint == "HEAD" else checkpoint
+
+    if not head_commit:
+        errors.append("could not resolve checkout HEAD")
+    elif checkpoint_commit and not ref_exists(root, str(checkpoint_commit)):
+        errors.append(f"checkpoint commit does not exist: {checkpoint_commit}")
+    elif checkpoint_commit and git(root, "merge-base", "--is-ancestor", str(checkpoint_commit), "HEAD").returncode != 0:
+        errors.append(f"checkout HEAD does not contain checkpoint commit: {checkpoint_commit}")
+
+    worktree = git(root, "status", "--porcelain=v1")
+    if worktree.returncode != 0:
+        errors.append("could not inspect checkout worktree")
+    elif worktree.stdout.strip():
+        errors.append("fresh recovery checkout has uncommitted changes")
+
+    remote_ref = f"refs/remotes/origin/{source_branch}"
+    remote_ref_available = ref_exists(root, remote_ref)
+    if head_commit and remote_ref_available:
+        remote_commit = git(root, "rev-parse", remote_ref).stdout.strip()
+        if remote_commit != head_commit:
+            errors.append(
+                f"checkout HEAD {head_commit} does not match expected source ref origin/{source_branch} at {remote_commit}"
+            )
+
+    report = {
+        "status": "pass" if not errors else "fail",
+        "head_commit": head_commit,
+        "checkpoint_commit": checkpoint_commit,
+        "checkout_branch": checkout_branch,
+        "source_branch": source_branch,
+        "ephemeral_checkout_branch": checkout_branch not in {source_branch, "unknown"},
+        "remote_ref_verified": remote_ref_available,
+        "programme_status": state.get("programme_status"),
+        "active_run": state.get("active_run", {}).get("id") if state.get("active_run") else None,
+        "active_pr": state.get("active_pr"),
+        "next_run": state.get("next_run", {}).get("id") if state.get("next_run") else None,
+        "next_atomic_action": state.get("next_atomic_action"),
+    }
+    return report, errors
 
 
 def source_ids_from_pilot(text: str) -> set[str]:
@@ -783,6 +833,7 @@ def configure_parser() -> argparse.ArgumentParser:
     sub = parser.add_subparsers(dest="command", required=True)
     validate = sub.add_parser("validate", help="validate state, artifacts, and optional synthesis diff")
     validate.add_argument("--base", help="Git base ref for guarded synthesis-diff validation")
+    sub.add_parser("recover-check", help="validate a fresh checkout and resolve cloud branch indirection")
     sub.add_parser("render", help="regenerate research/CONTROL.md")
     begin = sub.add_parser("begin", help="begin the next queued run")
     begin.add_argument("--branch", help="active branch; defaults to the checked-out branch")
@@ -839,6 +890,16 @@ def main(argv: list[str] | None = None) -> int:
                     print(f"ERROR: {error}")
                 return 1
             print("Research greenhouse validation passed.")
+            return 0
+
+        if args.command == "recover-check":
+            state = load_state(ROOT)
+            report, errors = recovery_checkout_report(state, ROOT)
+            print(json.dumps(report, indent=2, ensure_ascii=False))
+            if errors:
+                for error in errors:
+                    print(f"ERROR: {error}", file=sys.stderr)
+                return 1
             return 0
 
         state = load_state(ROOT)

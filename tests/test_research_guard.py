@@ -73,6 +73,31 @@ class ResearchGuardTests(unittest.TestCase):
         self.assertEqual("RUN-001", resumed["active_run"]["id"])
         self.assertEqual(state["completed_steps"], resumed["completed_steps"])
 
+    def test_cloud_ephemeral_branch_is_not_a_recovery_conflict(self):
+        subprocess.run(["git", "init", "-b", "main"], cwd=self.root, check=True, capture_output=True)
+        subprocess.run(["git", "add", "."], cwd=self.root, check=True, capture_output=True)
+        subprocess.run(
+            [
+                "git",
+                "-c",
+                "user.name=Research Guard",
+                "-c",
+                "user.email=guard@example.invalid",
+                "commit",
+                "-m",
+                "checkpoint",
+            ],
+            cwd=self.root,
+            check=True,
+            capture_output=True,
+        )
+        subprocess.run(["git", "switch", "-c", "work"], cwd=self.root, check=True, capture_output=True)
+        report, errors = guard.recovery_checkout_report(guard.load_state(self.root), self.root)
+        self.assertEqual([], errors)
+        self.assertEqual("main", report["source_branch"])
+        self.assertEqual("work", report["checkout_branch"])
+        self.assertTrue(report["ephemeral_checkout_branch"])
+
     def test_conserve_mode_and_pr_gate_are_explicit(self):
         state = guard.begin_run(guard.load_state(self.root), "codex/holiday/run-001")
         state = guard.conserve_programme(state, "usage warning")
