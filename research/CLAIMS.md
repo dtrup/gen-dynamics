@@ -13,6 +13,23 @@ This register tracks maturity, not truth by declaration. Final states (`retained
 | C-007 | Cross-scale similarities are explanatory only when typed as mechanistic, dynamical, functional, semantic, or genealogical. | Methodological constraint | bounded | all pilots |
 | C-008 | A compact basis of field dimensions, operators, and interaction motifs may outperform domain-specific decompositions on held-out cases. | Compression hypothesis | bounded | cross-pilot comparison |
 
+## RUN-001 programme baseline
+
+This is a zero-source operational baseline, not an evidential assessment. The pilot scorecards remain at zero until a bounded pilot run supplies evidence that discriminates a claim from its stated rival.
+
+| Claim | Baseline status | Primary discriminating requirement | Principal unresolved gap |
+| --- | --- | --- | --- |
+| C-001 | Bounded | Meaning-sensitive intervention must redistribute actionable possibilities beyond component variables. | No intervention evidence or comparative model. |
+| C-002 | Asserted | Effects must generalize across meaning-preserving carrier changes and differ after meaning changes. | No carrier-variation test. |
+| C-003 | Asserted | A field representation must improve held-out prediction or intervention selection over components. | No operational field estimator or model comparison. |
+| C-004 | Bounded | Content-sensitive perturbation must show recovery, switching, or hysteresis not explained by habit. | No perturbation trajectory evidence. |
+| C-005 | Bounded | Prior outputs must measurably alter later generative conditions beyond stable confounds. | No longitudinal or counterfactual identification. |
+| C-006 | Asserted | A shared control description must improve cross-target prediction or intervention. | Target classes are not yet operationally aligned. |
+| C-007 | Bounded | Relation typing must constrain transfer and predict distinct failure patterns. | No cross-pilot transfer comparison. |
+| C-008 | Bounded | The common basis must outperform equally complex domain-specific decompositions on held-out cases. | No common dataset, complexity rule, or held-out comparison. |
+
+At baseline, C-002, C-003, and C-006 remain asserted because their tests are identifiable but not yet bounded by pilot evidence. The other claims remain bounded by explicit scope, rivals, falsifiers, and candidate measurements, but none advances in maturity during RUN-001.
+
 ## C-001 — Core semantic-field loop
 
 - **Current boundary:** The claim concerns currently actionable possibilities, not every influence on cognition.

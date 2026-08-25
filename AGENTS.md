@@ -12,16 +12,16 @@ Every fresh task must do these steps before interpreting the research:
 
 1. Fetch `main` and the branch named in `research/STATE.json`, when a remote is available.
 2. Read this file, then `research/STATE.json`, then `research/CONTROL.md`, `research/CLAIMS.md`, and the active pilot report.
-3. Inspect the active PR and the commit referenced by `latest_checkpoint_commit`. `HEAD` means the commit containing the checked-out state file.
+3. Inspect the active PR, when one is recorded, and the commit referenced by `latest_checkpoint_commit`. `HEAD` means the commit containing the checked-out state file.
 4. Run `python scripts/research_guard.py recover-check` before changing state. This also runs repository validation.
 5. If `programme_status` is `running`, compare committed artifacts with `completed_steps`; resume `next_atomic_action` without repeating completed steps.
 6. Deduplicate evidence by DOI, stable URL, or source identifier.
 
 Never restart a pilot because a prior chat is unavailable. Repository state, not conversational memory, is authoritative.
 
-`active_branch` names the durable source/PR branch, not the runner's local checkout branch. Codex cloud may materialize the selected source commit on an ephemeral branch such as `work`; a different checkout branch name is not a conflict when `recover-check` confirms the checkpoint, expected remote ref when available, and a clean worktree.
+`active_branch` names the durable source branch, not necessarily the runner's local checkout branch. Codex cloud may materialize the selected source commit on an ephemeral branch such as `work`; a different checkout branch name is not a conflict when `recover-check` confirms the checkpoint, expected remote ref when available, and a clean worktree.
 
-If the checkpoint commit, expected remote ref, PR, artifacts, and state disagree, set `programme_status` to `waiting_decision`, add one decision card, avoid editing the synthesis, and continue only unrelated reversible work.
+If the checkpoint commit, expected remote ref when available, recorded PR when present, artifacts, and state disagree, set `programme_status` to `waiting_decision`, add one decision card, avoid editing the synthesis, and continue only unrelated reversible work.
 
 ## Run lifecycle
 
@@ -41,7 +41,18 @@ python scripts/research_guard.py validate
 
 Commit immediately after `begin`, after each source-selection or analytical pass, and after `complete`. A run may contain at most two research passes, four new sources, and one PR. Do not start the next run automatically.
 
-Create the run PR before `complete`, record it with `set-pr`, and retain it in state until a fresh task has verified that it merged or closed. Then use `clear-pr`. A new run cannot begin while an earlier PR remains unresolved.
+A PR is optional. When a Git remote and PR-creation integration are available, create at most one run PR, record it with `set-pr`, and retain it until a fresh task verifies that it merged or closed; then use `clear-pr`. When either facility is unavailable, commit directly on the current branch and run `complete` without a PR. A new run cannot begin while a recorded earlier PR remains unresolved.
+
+## Human-facing phase closeout
+
+At the end of each lifecycle phase—`begin`, every source-selection or analytical checkpoint, `pause`, and `complete`—give the user a short, human-friendly narrative in chat. State:
+
+1. what was done;
+2. what was learned, including a plain statement when nothing empirical was learned;
+3. the most important limitation or uncertainty;
+4. what happens next.
+
+Write for an interested non-specialist, use ordinary prose rather than a state-file dump, and distinguish evidence from interpretation. The narrative supplements the committed artifacts; it never substitutes for recording completed work, sources, decisions, and the exact next action in the repository. A commit-only phase still requires this closeout before stopping.
 
 When usage appears low, finish the current atomic step, add no optional sources, checkpoint, and pause. Never buy credits, upgrade a plan, add an API key, or change billing.
 
@@ -94,7 +105,7 @@ The following synthesis regions require a user decision and must never receive g
 
 Also protect new primitives, operators, universals, cross-scale generalizations, deletion or reframing of central claims, and synthesis changes above 300 net new words.
 
-Safe research infrastructure, checkpoints, pilot reports, bibliography corrections, and small validated clarifications may use the `safe-auto-merge` PR label. Protected changes remain in an open PR with a decision card.
+Safe research infrastructure, checkpoints, pilot reports, bibliography corrections, and small validated clarifications may use the `safe-auto-merge` PR label when a PR exists. Protected changes require a decision card and must remain unapplied to the protected synthesis until the user decides; when PR facilities exist, keep them in an open PR.
 
 ## Decision cards
 

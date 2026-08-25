@@ -1,33 +1,31 @@
 {
   "schema_version": 1,
-  "programme_status": "running",
+  "programme_status": "ready",
   "usage_mode": "normal",
-  "last_completed_run": "RUN-001",
-  "active_run": {
-    "id": "RUN-002",
-    "objective": "Compare semantic intervention with conditioned-response rivals in threat and avoidance.",
-    "pilot": "threat-avoidance",
-    "claim_family": "semantic-control",
-    "max_new_sources": 4,
-    "started_at": "2026-08-25T09:47:48+00:00",
-    "research_passes_completed": 0,
-    "new_sources_this_run": 0
-  },
-  "active_branch": "work",
+  "last_completed_run": "RUN-000",
+  "active_run": null,
+  "active_branch": "main",
   "active_pr": null,
-  "active_pilot": "threat-avoidance",
+  "active_pilot": null,
   "completed_steps": [
-    "Added mandatory human-friendly chat narratives at the end of every lifecycle phase."
+    "Defined the budget-adaptive research greenhouse."
   ],
-  "next_atomic_action": "Execute the first bounded pass for RUN-002: Compare semantic intervention with conditioned-response rivals in threat and avoidance.",
+  "next_atomic_action": "Begin RUN-001 and baseline the core claims without adding sources.",
   "next_run": {
-    "id": "RUN-002",
-    "objective": "Compare semantic intervention with conditioned-response rivals in threat and avoidance.",
-    "pilot": "threat-avoidance",
-    "claim_family": "semantic-control",
-    "max_new_sources": 4
+    "id": "RUN-001",
+    "objective": "Baseline the core claims and scorecard.",
+    "pilot": null,
+    "claim_family": "programme-baseline",
+    "max_new_sources": 0
   },
   "run_queue": [
+    {
+      "id": "RUN-001",
+      "objective": "Baseline the core claims and scorecard.",
+      "pilot": null,
+      "claim_family": "programme-baseline",
+      "max_new_sources": 0
+    },
     {
       "id": "RUN-002",
       "objective": "Compare semantic intervention with conditioned-response rivals in threat and avoidance.",
@@ -104,7 +102,7 @@
   },
   "pilot_states": {
     "threat-avoidance": {
-      "status": "active",
+      "status": "queued",
       "path": "research/PILOTS/threat-avoidance.md",
       "runs_without_gain": 0
     },
@@ -131,10 +129,10 @@
   },
   "safe_synthesis_change": null,
   "harvest": {
-    "completed_since_last_check": "Added mandatory human-friendly chat narratives at the end of every lifecycle phase.",
-    "claims_changed": "No maturity transitions; C-002, C-003, and C-006 remain asserted and the other claims remain bounded.",
-    "current_best_finding": "The zero-source baseline operationalizes a discriminating requirement and unresolved gap for each core claim; no empirical finding is claimed.",
-    "next_recommendation": "Execute the first bounded pass for RUN-002: Compare semantic intervention with conditioned-response rivals in threat and avoidance."
+    "completed_since_last_check": "Greenhouse control system prepared locally.",
+    "claims_changed": "None; baseline is the next run.",
+    "current_best_finding": "No empirical finding yet.",
+    "next_recommendation": "Begin RUN-001."
   },
   "latest_checkpoint_commit": "HEAD"
 }

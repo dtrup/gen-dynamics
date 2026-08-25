@@ -51,5 +51,6 @@ Baseline only; no evidence has been scouted.
 
 ## Run log
 
+- RUN-001 baseline: score remains 0/20; no sources assessed and no claim maturity changed.
 - RUN-006 planned: carrier variation and meaning-sensitive consequences.
 - RUN-007 planned: representation, coordination, infrastructure, enforcement, and power.

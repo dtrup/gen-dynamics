@@ -196,7 +196,7 @@ def render_control(state: dict[str, Any]) -> str:
             "## Fresh-task recovery",
             "",
             "1. Read `AGENTS.md` and `research/STATE.json` before interpreting the research.",
-            "2. Run `python scripts/research_guard.py recover-check` and inspect the PR if active.",
+            "2. Run `python scripts/research_guard.py recover-check` and inspect any recorded PR.",
             "3. Treat `active_branch` as the durable source branch; an ephemeral cloud branch such as `work` is not a conflict.",
             "4. Compare committed artifacts with `completed_steps`.",
             "5. Resume `next_atomic_action`; do not repeat completed steps or duplicate sources.",
@@ -853,7 +853,7 @@ def configure_parser() -> argparse.ArgumentParser:
     conserve = sub.add_parser("conserve", help="finish only the active atomic step, then pause")
     conserve.add_argument("--reason", required=True)
     sub.add_parser("resume", help="resume from usage_paused")
-    set_pr = sub.add_parser("set-pr", help="record the active PR URL or number")
+    set_pr = sub.add_parser("set-pr", help="optionally record the active PR URL or number")
     set_pr.add_argument("--pr", required=True)
     sub.add_parser("clear-pr", help="clear a verified merged or closed active PR")
     safe = sub.add_parser("mark-safe-change", help="record evidence for a guarded synthesis clarification")

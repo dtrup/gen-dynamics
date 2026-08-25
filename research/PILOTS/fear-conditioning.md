@@ -49,5 +49,6 @@ Baseline only; no evidence has been scouted.
 
 ## Run log
 
+- RUN-001 baseline: score remains 0/20; no sources assessed and no claim maturity changed.
 - RUN-004 planned: strongest lower-level account.
 - RUN-005 planned: semantic boundary and required revisions.

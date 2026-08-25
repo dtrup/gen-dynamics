@@ -2,7 +2,7 @@
 
 ## Status
 
-Active. Exploratory and not publication ready.
+Queued. Exploratory and not publication ready.
 
 ## Scope
 

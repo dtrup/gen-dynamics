@@ -31,7 +31,12 @@ class ResearchGuardTests(unittest.TestCase):
         ):
             target = self.root / relative
             target.parent.mkdir(parents=True, exist_ok=True)
-            target.write_text((REPO_ROOT / relative).read_text(encoding="utf-8"), encoding="utf-8")
+            source = REPO_ROOT / relative
+            if relative == "research/STATE.json":
+                source = REPO_ROOT / "tests/fixtures/STATE.bootstrap.json"
+            elif relative == "research/PILOTS/threat-avoidance.md":
+                source = REPO_ROOT / "tests/fixtures/threat-avoidance.bootstrap.md"
+            target.write_text(source.read_text(encoding="utf-8"), encoding="utf-8")
         synthesis = next(REPO_ROOT.glob("Toward*.md"))
         (self.root / synthesis.name).write_text(synthesis.read_text(encoding="utf-8"), encoding="utf-8")
         guard.render_to_disk(guard.load_state(self.root), self.root)
@@ -41,6 +46,13 @@ class ResearchGuardTests(unittest.TestCase):
 
     def test_bootstrap_repository_is_valid(self):
         self.assertEqual([], guard.validate_repository(self.root))
+
+    def test_process_requires_human_friendly_phase_closeout(self):
+        constitution = (self.root / "AGENTS.md").read_text(encoding="utf-8")
+        self.assertIn("## Human-facing phase closeout", constitution)
+        for required in ("what was done", "what was learned", "limitation or uncertainty", "what happens next"):
+            self.assertIn(required, constitution)
+        self.assertIn("never substitutes for recording completed work", constitution)
 
     def test_dashboard_is_deterministic_and_stale_copy_is_rejected(self):
         state = guard.load_state(self.root)
@@ -98,7 +110,7 @@ class ResearchGuardTests(unittest.TestCase):
         self.assertEqual("work", report["checkout_branch"])
         self.assertTrue(report["ephemeral_checkout_branch"])
 
-    def test_conserve_mode_and_pr_gate_are_explicit(self):
+    def test_optional_pr_is_retained_and_gates_the_next_run(self):
         state = guard.begin_run(guard.load_state(self.root), "codex/holiday/run-001")
         state = guard.conserve_programme(state, "usage warning")
         self.assertEqual("conserve", state["usage_mode"])
