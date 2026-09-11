@@ -120,16 +120,14 @@ class ResearchGuardTests(unittest.TestCase):
         self.assertEqual("work", report["checkout_branch"])
         self.assertTrue(report["ephemeral_checkout_branch"])
 
-    def test_new_pr_is_forbidden_but_legacy_pr_still_gates_next_run(self):
+    def test_optional_pr_is_retained_and_gates_the_next_run(self):
         state = guard.begin_run(guard.load_state(self.root), "codex/holiday/run-001")
         state = guard.conserve_programme(state, "usage warning")
         self.assertEqual("conserve", state["usage_mode"])
         self.assertIn("add no optional sources", state["next_atomic_action"])
-        with self.assertRaises(guard.GuardError):
-            guard.set_active_pr(state, "https://github.example/pr/1")
-        state["active_pr"] = "https://github.example/pr/legacy"
+        state = guard.set_active_pr(state, "https://github.example/pr/1")
         state = guard.complete_run(state, "Baseline recorded.", "No transitions.")
-        self.assertEqual("https://github.example/pr/legacy", state["active_pr"])
+        self.assertEqual("https://github.example/pr/1", state["active_pr"])
         with self.assertRaises(guard.GuardError):
             guard.begin_run(state, "codex/holiday/run-002")
         state = guard.set_active_pr(state, None)

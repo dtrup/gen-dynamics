@@ -2,7 +2,7 @@
 
 **STATUS:** GREEN
 **LAST SAFE CHECKPOINT:** HEAD (RUN-010)
-**COMPLETED SINCE LAST CHECK:** Completed the full planned programme, RUN-001 through RUN-010.
+**COMPLETED SINCE LAST CHECK:** Recorded active PR https://github.com/dtrup/gen-dynamics/pull/5.
 **CLAIMS ADVANCED / WEAKENED:** No final claim maturity changed; all outcomes remain provisional, the synthesis is unchanged, and the programme closes without an open decision.
 **CURRENT BEST FINDING:** The programme did not validate a substantive cross-domain architecture; it delivered a semantic-causal test, cross-scale typing discipline, explicit rivals, and bounded requirements for future advancement.
 **NEXT ATOMIC ACTION:** No planned run remains; review the final harvest.
@@ -16,8 +16,8 @@
 - Programme state: `complete`
 - Usage mode: `normal`
 - Active run: none
-- Active branch: `work`
-- Active PR: `none`
+- Active branch: `codex/review-plan-and-prepare-for-next-run`
+- Active PR: `https://github.com/dtrup/gen-dynamics/pull/5`
 - Active pilot: `none`
 
 ## Pilot budgets

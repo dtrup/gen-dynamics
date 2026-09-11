@@ -4,8 +4,8 @@
   "usage_mode": "normal",
   "last_completed_run": "RUN-010",
   "active_run": null,
-  "active_branch": "work",
-  "active_pr": null,
+  "active_branch": "codex/review-plan-and-prepare-for-next-run",
+  "active_pr": "https://github.com/dtrup/gen-dynamics/pull/5",
   "active_pilot": null,
   "completed_steps": [
     "Completed RUN-010: Produce the final or partial harvest and leave a clean resume point."
@@ -52,7 +52,7 @@
   },
   "safe_synthesis_change": null,
   "harvest": {
-    "completed_since_last_check": "Completed the full planned programme, RUN-001 through RUN-010.",
+    "completed_since_last_check": "Recorded active PR https://github.com/dtrup/gen-dynamics/pull/5.",
     "claims_changed": "No final claim maturity changed; all outcomes remain provisional, the synthesis is unchanged, and the programme closes without an open decision.",
     "current_best_finding": "The programme did not validate a substantive cross-domain architecture; it delivered a semantic-causal test, cross-scale typing discipline, explicit rivals, and bounded requirements for future advancement.",
     "next_recommendation": "No planned run remains; review the final harvest and do not infer current progress from historical fixtures or preflight records."
