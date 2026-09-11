@@ -36,8 +36,8 @@ class ResearchGuardTests(unittest.TestCase):
                 source = REPO_ROOT / "tests/fixtures/STATE.bootstrap.json"
             elif relative == "research/CLAIMS.md":
                 source = REPO_ROOT / "tests/fixtures/CLAIMS.bootstrap.md"
-            elif relative == "research/PILOTS/threat-avoidance.md":
-                source = REPO_ROOT / "tests/fixtures/threat-avoidance.bootstrap.md"
+            elif relative.startswith("research/PILOTS/"):
+                source = REPO_ROOT / "tests/fixtures" / (Path(relative).stem + ".bootstrap.md")
             target.write_text(source.read_text(encoding="utf-8"), encoding="utf-8")
         synthesis = next(REPO_ROOT.glob("Toward*.md"))
         (self.root / synthesis.name).write_text(synthesis.read_text(encoding="utf-8"), encoding="utf-8")
@@ -63,6 +63,14 @@ class ResearchGuardTests(unittest.TestCase):
         self.assertEqual(expected, (self.root / guard.CONTROL_PATH).read_text(encoding="utf-8"))
         (self.root / guard.CONTROL_PATH).write_text("stale\n", encoding="utf-8")
         self.assertIn("research/CONTROL.md is stale; run the render command", guard.validate_repository(self.root))
+
+    def test_completed_programme_requests_review_not_continue(self):
+        state = guard.load_state(self.root)
+        state["programme_status"] = "complete"
+        state["active_run"] = None
+        state["next_run"] = None
+        state["run_queue"] = []
+        self.assertIn("**REPLY:** REVIEW", guard.render_control(state))
 
     def test_claim_register_maturity_must_match_state(self):
         claims_path = self.root / guard.CLAIMS_PATH
@@ -112,14 +120,16 @@ class ResearchGuardTests(unittest.TestCase):
         self.assertEqual("work", report["checkout_branch"])
         self.assertTrue(report["ephemeral_checkout_branch"])
 
-    def test_optional_pr_is_retained_and_gates_the_next_run(self):
+    def test_new_pr_is_forbidden_but_legacy_pr_still_gates_next_run(self):
         state = guard.begin_run(guard.load_state(self.root), "codex/holiday/run-001")
         state = guard.conserve_programme(state, "usage warning")
         self.assertEqual("conserve", state["usage_mode"])
         self.assertIn("add no optional sources", state["next_atomic_action"])
-        state = guard.set_active_pr(state, "https://github.example/pr/1")
+        with self.assertRaises(guard.GuardError):
+            guard.set_active_pr(state, "https://github.example/pr/1")
+        state["active_pr"] = "https://github.example/pr/legacy"
         state = guard.complete_run(state, "Baseline recorded.", "No transitions.")
-        self.assertEqual("https://github.example/pr/1", state["active_pr"])
+        self.assertEqual("https://github.example/pr/legacy", state["active_pr"])
         with self.assertRaises(guard.GuardError):
             guard.begin_run(state, "codex/holiday/run-002")
         state = guard.set_active_pr(state, None)

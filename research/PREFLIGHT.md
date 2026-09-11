@@ -1,6 +1,10 @@
-# Pre-holiday preflight
+# Pre-holiday preflight (historical)
 
-This file records infrastructure acceptance checks. It is not research evidence and does not advance a claim.
+This file records infrastructure acceptance checks performed before the research
+runs began. It is retained as historical provenance, is not the current
+programme status, is not research evidence, and does not advance a claim. The
+programme subsequently completed all ten planned runs; current status lives in
+`research/STATE.json` and the final findings live in `research/HARVEST.md`.
 
 | Check | Result | Evidence |
 |---|---|---|
@@ -11,4 +15,6 @@ This file records infrastructure acceptance checks. It is not research evidence 
 | Fresh cloud-task recovery | PASS | A new `gen-dynamics-greenhouse` task recovered commit `51d9dbb` on ephemeral branch `work`, passed `recover-check`, validation, and all 13 tests, and left RUN-001 untouched. |
 | Usage pause and fresh-task resume | PASS (simulated) | The transactional pause/resume test preserves the checkpoint and next action. |
 
-The research programme remains `ready`; this preflight does not start `RUN-001`.
+At the time of this preflight, the programme was `ready` and `RUN-001` had not
+started. That statement is historical: the programme is now `complete` through
+`RUN-010`.

@@ -1,44 +1,36 @@
 # Research Greenhouse Control
 
 **STATUS:** GREEN
-**LAST SAFE CHECKPOINT:** HEAD (RUN-001)
-**COMPLETED SINCE LAST CHECK:** Reconciled the local branch with the later public main snapshot while preserving RUN-002 evidence and human-facing closeouts.
-**CLAIMS ADVANCED / WEAKENED:** C-001: bounded → rivalled; C-002: asserted → bounded.
-**CURRENT BEST FINDING:** Instructions can alter fear and avoidance, defeating a pairing-only account, but they do not yet establish semantic necessity over expectancy, context, incentive, associative, or component-variable rivals.
-**NEXT ATOMIC ACTION:** Complete RUN-002 without a PR after validating the reconciled checkpoint.
+**LAST SAFE CHECKPOINT:** HEAD (RUN-010)
+**COMPLETED SINCE LAST CHECK:** Completed the full planned programme, RUN-001 through RUN-010.
+**CLAIMS ADVANCED / WEAKENED:** No final claim maturity changed; all outcomes remain provisional, the synthesis is unchanged, and the programme closes without an open decision.
+**CURRENT BEST FINDING:** The programme did not validate a substantive cross-domain architecture; it delivered a semantic-causal test, cross-scale typing discipline, explicit rivals, and bounded requirements for future advancement.
+**NEXT ATOMIC ACTION:** No planned run remains; review the final harvest.
 **DECISIONS:** none
-**REPLY:** CONTINUE
+**REPLY:** REVIEW
 
 > This is an exploratory, budget-adaptive programme. Missing a check-in leaves it idle and resumable.
 
 ## Active run
 
-- Programme state: `running`
+- Programme state: `complete`
 - Usage mode: `normal`
-- Active run: RUN-002 — Compare semantic intervention with conditioned-response rivals in threat and avoidance.
-- Active branch: `research/run-002`
+- Active run: none
+- Active branch: `work`
 - Active PR: `none`
-- Active pilot: `threat-avoidance`
+- Active pilot: `none`
 
 ## Pilot budgets
 
 | Pilot | Status | Sources | Runs without gain |
 | --- | --- | ---: | ---: |
-| `threat-avoidance` | active | 4/8 | 0/2 |
-| `fear-conditioning` | queued | 0/8 | 0/2 |
-| `fiat-money` | queued | 0/8 | 0/2 |
+| `threat-avoidance` | complete | 8/8 | 0/2 |
+| `fear-conditioning` | complete | 8/8 | 0/2 |
+| `fiat-money` | complete | 8/8 | 0/2 |
 
 ## Queue
 
-- `RUN-002` [threat-avoidance] — Compare semantic intervention with conditioned-response rivals in threat and avoidance.
-- `RUN-003` [threat-avoidance] — Test effective-field, feedback, perturbation, and hysteresis claims in threat and avoidance.
-- `RUN-004` [fear-conditioning] — Construct the strongest lower-level account of Pavlovian fear conditioning.
-- `RUN-005` [fear-conditioning] — Determine the semantic boundary and required revisions from fear conditioning.
-- `RUN-006` [fiat-money] — Test carrier variation and meaning-sensitive consequences in fiat money.
-- `RUN-007` [fiat-money] — Separate representation, coordination, infrastructure, enforcement, and power in fiat money.
-- `RUN-008` [programme] — Compare all pilots using the common case protocol.
-- `RUN-009` [programme] — Run a subtraction pass and propose validated synthesis clarifications.
-- `RUN-010` [programme] — Produce the final or partial harvest and leave a clean resume point.
+- No planned runs remain.
 
 ## Open decisions
 

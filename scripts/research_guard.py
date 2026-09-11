@@ -116,7 +116,7 @@ def status_label(programme_status: str) -> str:
 def render_control(state: dict[str, Any]) -> str:
     decisions = state.get("open_decisions", [])
     decision_ids = ", ".join(item.get("id", "UNKNOWN") for item in decisions) or "none"
-    reply = "CONTINUE"
+    reply = "REVIEW" if state.get("programme_status") == "complete" else "CONTINUE"
     if decisions:
         first_id = decisions[0].get("id", "DEC-???")
         reply = f"{first_id} A | {first_id} B"
@@ -756,11 +756,10 @@ def complete_run(state: dict[str, Any], finding: str, claim_change: str) -> dict
 
 def set_active_pr(state: dict[str, Any], pr: str | None) -> dict[str, Any]:
     state = copy.deepcopy(state)
-    state["active_pr"] = pr
     if pr:
-        state["harvest"]["completed_since_last_check"] = f"Recorded active PR {pr}."
-    else:
-        state["harvest"]["completed_since_last_check"] = "Verified and cleared the previous active PR."
+        raise GuardError("commit-only workflow forbids recording a new PR")
+    state["active_pr"] = pr
+    state["harvest"]["completed_since_last_check"] = "Verified and cleared the previous active PR."
     return state
 
 
@@ -853,8 +852,6 @@ def configure_parser() -> argparse.ArgumentParser:
     conserve = sub.add_parser("conserve", help="finish only the active atomic step, then pause")
     conserve.add_argument("--reason", required=True)
     sub.add_parser("resume", help="resume from usage_paused")
-    set_pr = sub.add_parser("set-pr", help="optionally record the active PR URL or number")
-    set_pr.add_argument("--pr", required=True)
     sub.add_parser("clear-pr", help="clear a verified merged or closed active PR")
     safe = sub.add_parser("mark-safe-change", help="record evidence for a guarded synthesis clarification")
     safe.add_argument("--claim", required=True)
@@ -921,8 +918,6 @@ def main(argv: list[str] | None = None) -> int:
             state = conserve_programme(state, args.reason)
         elif args.command == "resume":
             state = resume_programme(state)
-        elif args.command == "set-pr":
-            state = set_active_pr(state, args.pr)
         elif args.command == "clear-pr":
             state = set_active_pr(state, None)
         elif args.command == "mark-safe-change":

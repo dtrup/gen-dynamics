@@ -33,15 +33,14 @@ python scripts/research_guard.py checkpoint --step "..." --next-action "..."
 python scripts/research_guard.py conserve --reason "Usage warning surfaced"
 python scripts/research_guard.py pause --reason "Usage unavailable"
 python scripts/research_guard.py resume
-python scripts/research_guard.py set-pr --pr "<PR URL or number>"
 python scripts/research_guard.py complete --finding "..." --claim-change "..."
 python scripts/research_guard.py render
 python scripts/research_guard.py validate
 ```
 
-Commit immediately after `begin`, after each source-selection or analytical pass, and after `complete`. A run may contain at most two research passes, four new sources, and one PR. Do not start the next run automatically.
+Commit immediately after `begin`, after each source-selection or analytical pass, and after `complete`. A run may contain at most two research passes and four new sources. Do not start the next run automatically.
 
-A PR is optional. When a Git remote and PR-creation integration are available, create at most one run PR, record it with `set-pr`, and retain it until a fresh task verifies that it merged or closed; then use `clear-pr`. When either facility is unavailable, commit directly on the current branch and run `complete` without a PR. A new run cannot begin while a recorded earlier PR remains unresolved.
+Use a commit-only workflow. Commit directly on the current branch; never push, create or update a PR, or invoke a PR integration. A legacy recorded PR must still be inspected and cleared after it is verified merged or closed, and a new run cannot begin while such a record remains unresolved.
 
 ## Human-facing phase closeout
 
@@ -105,7 +104,7 @@ The following synthesis regions require a user decision and must never receive g
 
 Also protect new primitives, operators, universals, cross-scale generalizations, deletion or reframing of central claims, and synthesis changes above 300 net new words.
 
-Safe research infrastructure, checkpoints, pilot reports, bibliography corrections, and small validated clarifications may use the `safe-auto-merge` PR label when a PR exists. Protected changes require a decision card and must remain unapplied to the protected synthesis until the user decides; when PR facilities exist, keep them in an open PR.
+Safe research infrastructure, checkpoints, pilot reports, bibliography corrections, and small validated clarifications may be committed directly. Protected changes require a decision card and must remain unapplied to the protected synthesis until the user decides.
 
 ## Decision cards
 
